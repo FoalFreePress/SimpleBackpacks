@@ -89,11 +89,11 @@ public class BackpackContainer extends Container {
         super(containerType, windowId);
         this.provider = provider;
         this.inventory = provider.getInventory();
-        assertInventorySize(inventory, backpackType.size);
+        checkContainerSize(inventory, backpackType.size);
 
         this.backpackType = backpackType;
 
-        inventory.openInventory(playerInventory.player);
+        inventory.startOpen(playerInventory.player);
 
         getSlots(provider.getInventory(), playerInventory, backpackType, getOffset(backpackType)).forEach((slot) -> addSlot(slot));
     }
@@ -134,38 +134,38 @@ public class BackpackContainer extends Container {
     }
 
     @Override
-    public boolean canInteractWith(PlayerEntity playerIn) {
-        return inventory.isUsableByPlayer(playerIn);
+    public boolean stillValid(PlayerEntity playerIn) {
+        return inventory.stillValid(playerIn);
     }
 
     @Override
-    public ItemStack transferStackInSlot(PlayerEntity playerIn, int index) {
+    public ItemStack quickMoveStack(PlayerEntity playerIn, int index) {
         ItemStack itemstack = ItemStack.EMPTY;
-        Slot slot = inventorySlots.get(index);
+        Slot slot = slots.get(index);
 
-        if (slot != null && slot.getHasStack()) {
-            ItemStack itemstack1 = slot.getStack();
+        if (slot != null && slot.hasItem()) {
+            ItemStack itemstack1 = slot.getItem();
             itemstack = itemstack1.copy();
 
             if (index < backpackType.size) {
-                if (!mergeItemStack(itemstack1, backpackType.size, inventorySlots.size(), true))
+                if (!moveItemStackTo(itemstack1, backpackType.size, slots.size(), true))
                     return ItemStack.EMPTY;
-            } else if (!mergeItemStack(itemstack1, 0, backpackType.size, false))
+            } else if (!moveItemStackTo(itemstack1, 0, backpackType.size, false))
                 return ItemStack.EMPTY;
 
             if (itemstack1.isEmpty())
-                slot.putStack(ItemStack.EMPTY);
+                slot.set(ItemStack.EMPTY);
             else
-                slot.onSlotChanged();
+                slot.setChanged();
         }
 
         return itemstack;
     }
 
     @Override
-    public void onContainerClosed(PlayerEntity playerIn) {
-        super.onContainerClosed(playerIn);
-        inventory.closeInventory(playerIn);
+    public void removed(PlayerEntity playerIn) {
+        super.removed(playerIn);
+        inventory.stopOpen(playerIn);
         provider.setInventory((Inventory) inventory);
         provider.save();
         playerIn.playSound(BackpackSounds.CLOSE_SOUND.get(), 1.0F, 1.0F);

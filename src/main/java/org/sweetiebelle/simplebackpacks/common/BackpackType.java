@@ -70,8 +70,8 @@ public enum BackpackType implements IStringSerializable {
     }
     
     @Override
-    public String getString() {
-        return I18n.format("item.simplebackpacks.%s", name());
+    public String getSerializedName() {
+        return I18n.get("item.simplebackpacks.%s", name());
     }
 
     public int getRowCount() {

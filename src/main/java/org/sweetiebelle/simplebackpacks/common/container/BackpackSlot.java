@@ -38,17 +38,17 @@ public class BackpackSlot extends Slot {
     }
 
     @Override
-    public boolean canTakeStack(final PlayerEntity player) {
-        if (getStack().getItem() instanceof ItemBackpack)
+    public boolean mayPickup(final PlayerEntity player) {
+        if (getItem().getItem() instanceof ItemBackpack)
             return false;
-        return super.canTakeStack(player);
+        return super.mayPickup(player);
     }
     
     @Override
-    public boolean isItemValid(ItemStack stack) {
+    public boolean mayPlace(ItemStack stack) {
         if(stack.getItem() instanceof ItemBackpack)
             return false;
-        return super.isItemValid(stack);
+        return super.mayPlace(stack);
     }
 
 }

@@ -35,7 +35,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class BackpackItems {
-    private static final Item.Properties BACKPACK_PROPS = new Item.Properties().defaultMaxDamage(0).maxStackSize(1).group(ItemGroup.TOOLS);
+    private static final Item.Properties BACKPACK_PROPS = new Item.Properties().defaultDurability(0).stacksTo(1).tab(ItemGroup.TAB_TOOLS);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, SimpleBackpacks.MODID);;
 
     public static final RegistryObject<ItemBackpack> LEATHER_BACKPACK = ITEMS.register("leather_backpack", () -> new ItemBackpack(BACKPACK_PROPS, BackpackType.LEATHER));

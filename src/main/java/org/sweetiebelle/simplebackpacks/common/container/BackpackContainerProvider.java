@@ -70,7 +70,7 @@ public class BackpackContainerProvider implements INamedContainerProvider {
 
     @Override
     public ITextComponent getDisplayName() {
-        return item.getDisplayName();
+        return item.getHoverName();
     }
 
 }

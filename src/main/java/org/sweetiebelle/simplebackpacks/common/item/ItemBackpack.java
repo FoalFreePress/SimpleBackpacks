@@ -35,6 +35,8 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 
+import net.minecraft.item.Item.Properties;
+
 public class ItemBackpack extends Item {
 
     private BackpackType type;
@@ -45,11 +47,11 @@ public class ItemBackpack extends Item {
     }
 
     @Override
-    public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, Hand hand) {
-        ItemStack held = player.getHeldItem(hand);
+    public ActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
+        ItemStack held = player.getItemInHand(hand);
         player.playSound(BackpackSounds.OPEN_SOUND.get(), 1.0F, 1.0F);
-        player.openContainer(new BackpackContainerProvider(held));
-        return ActionResult.resultSuccess(held);
+        player.openMenu(new BackpackContainerProvider(held));
+        return ActionResult.success(held);
     }
 
     public BackpackType getBackpackType() {

@@ -52,8 +52,8 @@ public class InventoryProvider implements INBTSerializable<ListNBT> {
     @Override
     public ListNBT serializeNBT() {
         ListNBT list = new ListNBT();
-        for (int i = 0; i < inventory.getSizeInventory(); i++)
-            list.add(inventory.getStackInSlot(i).serializeNBT());
+        for (int i = 0; i < inventory.getContainerSize(); i++)
+            list.add(inventory.getItem(i).serializeNBT());
         return list;
     }
 
@@ -84,7 +84,7 @@ public class InventoryProvider implements INBTSerializable<ListNBT> {
         if (nbt == null)
             return;
         for (int i = 0; i < nbt.size(); i++) {
-            inventory.setInventorySlotContents(i, ItemStack.read(nbt.getCompound(i)));
+            inventory.setItem(i, ItemStack.of(nbt.getCompound(i)));
         }
     }
 
@@ -125,7 +125,7 @@ public class InventoryProvider implements INBTSerializable<ListNBT> {
                 return new InventoryProvider(new ItemStack(leatherBackpack, 1), leatherBackpack);
             }
             default:
-                throw new IllegalArgumentException("Unknown type: " + type.getString());
+                throw new IllegalArgumentException("Unknown type: " + type.getSerializedName());
 
         }
     }
