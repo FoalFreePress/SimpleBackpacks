@@ -63,10 +63,3 @@ build/
 #############
 run/
 /logs/
-
-
-#############
-## Custom
-#############
-src/main/resources/assets/simplebackpacks/sounds
-src/main/resources/assets/simplebackpacks/textures/item
