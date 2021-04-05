@@ -24,11 +24,15 @@
 
 package org.sweetiebelle.simplebackpacks;
 
+import java.util.Objects;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.sweetiebelle.simplebackpacks.common.container.BackpackContainerTypes;
 import org.sweetiebelle.simplebackpacks.common.item.BackpackItems;
 import org.sweetiebelle.simplebackpacks.common.sounds.BackpackSounds;
+
+import net.minecraft.util.ResourceLocation;
 
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -48,5 +52,10 @@ public class SimpleBackpacks {
         BackpackItems.ITEMS.register(modBus);
         BackpackContainerTypes.CONTAINERS.register(modBus);
         BackpackSounds.SOUNDS.register(modBus);
+    }
+    
+    
+    public static ResourceLocation of(String name) {
+        return new ResourceLocation(MODID, Objects.requireNonNull(name));
     }
 }

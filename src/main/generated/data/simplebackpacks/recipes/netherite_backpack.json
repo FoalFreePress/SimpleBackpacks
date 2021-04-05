@@ -4,7 +4,7 @@
     "item": "simplebackpacks:diamond_backpack"
   },
   "addition": {
-    "item": "minecraft:netherite_ingot"
+    "tag": "forge:ingots/netherite"
   },
   "result": {
     "item": "simplebackpacks:netherite_backpack"

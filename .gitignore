@@ -63,3 +63,4 @@ build/
 #############
 run/
 /logs/
+/src/main/generated/.cache/

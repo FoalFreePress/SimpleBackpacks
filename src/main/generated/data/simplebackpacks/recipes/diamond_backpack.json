@@ -4,7 +4,7 @@
     "item": "simplebackpacks:gold_backpack"
   },
   "addition": {
-    "item": "minecraft:diamond_block"
+    "tag": "forge:storage_blocks/diamond"
   },
   "result": {
     "item": "simplebackpacks:diamond_backpack"
