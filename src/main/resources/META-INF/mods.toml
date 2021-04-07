@@ -1,25 +1,26 @@
 modLoader="javafml"
-loaderVersion="31.2.31"
+loaderVersion="${loader_range}"
 license="MIT license. See LICENSE.txt for a copy."
-[[mods]]
-modId="simplebackpacks" 
-version="1"
-displayName="Simple Backpacks"
-# The description text for the mod (multi line!) (#mandatory)
-description='''
-Adds simple four different tiered backpacks.
-'''
 
-[[dependencies.ironbackpacks]]
+[[mods]]
+    modId="simplebackpacks" 
+    version="${version}"
+    displayName="Simple Backpacks"
+    authors="shroomdog27"
+    description='''
+    Adds simple four different tiered backpacks.
+    '''
+
+[[dependencies.simplebackpacks]]
     modId="forge"
     mandatory=true
-    versionRange="33.0.0"
+    versionRange="${forge_range}"
     ordering="NONE"
     side="BOTH"
-# Here's another dependency
-[[dependencies.ironbackpacks]]
+
+[[dependencies.simplebackpacks]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.2]"
+    versionRange="${minecraft_range}"
     ordering="NONE"
     side="BOTH"
