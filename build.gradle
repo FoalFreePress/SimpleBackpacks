@@ -1,3 +1,5 @@
+import net.minecraftforge.gradle.common.task.SignJar
+
 buildscript {
     repositories {
         maven { url = 'https://files.minecraftforge.net/maven' }
@@ -190,6 +192,25 @@ license {
         }
     }
 }
+
+//Sign jar from flatfile if present
+task signJar(type: SignJar, dependsOn: jar) {
+    onlyIf {
+        project.hasProperty('keyStore')
+    }
+    if (project.hasProperty('keyStore')) {
+        keyStore = project.keyStore
+        alias = project.alias
+        storePass = project.storePass
+        keyPass = project.keyPass
+        inputFile = jar.archivePath
+        outputFile = jar.archivePath
+    } else {
+        logger.warn("No key store found, not signing the output jar\n")
+    }
+}
+
+build.dependsOn signJar
 
 def reobfFile = file("$buildDir/reobfJar/output.jar")
 def reobfArtifact = artifacts.add('default', reobfFile) {
