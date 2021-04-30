@@ -36,8 +36,8 @@ import net.minecraftforge.registries.DeferredRegister;
 public class BackpackSounds {
     public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, SimpleBackpacks.MODID);
 
-    public static final RegistryObject<SoundEvent> OPEN_SOUND = SOUNDS.register("open_backpack", () -> new SoundEvent(new ResourceLocation(SimpleBackpacks.MODID, "open_backpack")));
+    public static final RegistryObject<SoundEvent> OPEN_SOUND = SOUNDS.register("open_backpack", () -> new SoundEvent(SimpleBackpacks.of("open_backpack")));
 
-    public static final RegistryObject<SoundEvent> CLOSE_SOUND = SOUNDS.register("close_backpack", () -> new SoundEvent(new ResourceLocation(SimpleBackpacks.MODID, "close_backpack")));
+    public static final RegistryObject<SoundEvent> CLOSE_SOUND = SOUNDS.register("close_backpack", () -> new SoundEvent(SimpleBackpacks.of("close_backpack")));
 
 }
