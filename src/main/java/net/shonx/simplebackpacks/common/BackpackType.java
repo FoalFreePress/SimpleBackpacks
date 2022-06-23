@@ -22,13 +22,13 @@
  * SOFTWARE.
  */
 
-package org.sweetiebelle.simplebackpacks.common;
+package net.shonx.simplebackpacks.common;
 
 import java.util.Locale;
 
 import javax.annotation.Nullable;
 
-import org.sweetiebelle.simplebackpacks.SimpleBackpacks;
+import net.shonx.simplebackpacks.SimpleBackpacks;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.ResourceLocation;

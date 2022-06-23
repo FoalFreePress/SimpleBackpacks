@@ -22,22 +22,33 @@
  * SOFTWARE.
  */
 
-package org.sweetiebelle.simplebackpacks.common.sounds;
+package net.shonx.simplebackpacks.common.container;
 
-import net.minecraftforge.registries.ForgeRegistries;
+import net.shonx.simplebackpacks.common.item.ItemBackpack;
 
-import org.sweetiebelle.simplebackpacks.SimpleBackpacks;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.container.Slot;
+import net.minecraft.item.ItemStack;
 
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
-import net.minecraftforge.fml.RegistryObject;
-import net.minecraftforge.registries.DeferredRegister;
+public class BackpackSlot extends Slot {
 
-public class BackpackSounds {
-    public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, SimpleBackpacks.MODID);
+    public BackpackSlot(IInventory inventoryIn, int index, int xPosition, int yPosition) {
+        super(inventoryIn, index, xPosition, yPosition);
+    }
 
-    public static final RegistryObject<SoundEvent> OPEN_SOUND = SOUNDS.register("open_backpack", () -> new SoundEvent(SimpleBackpacks.of("open_backpack")));
-
-    public static final RegistryObject<SoundEvent> CLOSE_SOUND = SOUNDS.register("close_backpack", () -> new SoundEvent(SimpleBackpacks.of("close_backpack")));
+    @Override
+    public boolean mayPickup(final PlayerEntity player) {
+        if (getItem().getItem() instanceof ItemBackpack)
+            return false;
+        return super.mayPickup(player);
+    }
+    
+    @Override
+    public boolean mayPlace(ItemStack stack) {
+        if(stack.getItem() instanceof ItemBackpack)
+            return false;
+        return super.mayPlace(stack);
+    }
 
 }

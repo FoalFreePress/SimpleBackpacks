@@ -23,10 +23,10 @@
  */
 
 // https://github.com/hanetzer helped write this class!
-package org.sweetiebelle.simplebackpacks.common.item;
+package net.shonx.simplebackpacks.common.item;
 
-import org.sweetiebelle.simplebackpacks.SimpleBackpacks;
-import org.sweetiebelle.simplebackpacks.common.BackpackType;
+import net.shonx.simplebackpacks.SimpleBackpacks;
+import net.shonx.simplebackpacks.common.BackpackType;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;

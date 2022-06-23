@@ -22,15 +22,15 @@
  * SOFTWARE.
  */
 
-package org.sweetiebelle.simplebackpacks;
+package net.shonx.simplebackpacks;
 
 import java.util.Objects;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.sweetiebelle.simplebackpacks.common.container.BackpackContainerTypes;
-import org.sweetiebelle.simplebackpacks.common.item.BackpackItems;
-import org.sweetiebelle.simplebackpacks.common.sounds.BackpackSounds;
+import net.shonx.simplebackpacks.common.container.BackpackContainerTypes;
+import net.shonx.simplebackpacks.common.item.BackpackItems;
+import net.shonx.simplebackpacks.common.sounds.BackpackSounds;
 
 import net.minecraft.util.ResourceLocation;
 

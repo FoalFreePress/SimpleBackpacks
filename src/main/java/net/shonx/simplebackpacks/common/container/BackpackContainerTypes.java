@@ -22,9 +22,9 @@
  * SOFTWARE.
  */
 
-package org.sweetiebelle.simplebackpacks.common.container;
+package net.shonx.simplebackpacks.common.container;
 
-import org.sweetiebelle.simplebackpacks.SimpleBackpacks;
+import net.shonx.simplebackpacks.SimpleBackpacks;
 
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraftforge.fml.RegistryObject;

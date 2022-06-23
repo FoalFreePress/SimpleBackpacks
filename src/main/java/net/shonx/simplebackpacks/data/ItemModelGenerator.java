@@ -22,9 +22,9 @@
  * SOFTWARE.
  */
 
-package org.sweetiebelle.simplebackpacks.data;
+package net.shonx.simplebackpacks.data;
 
-import org.sweetiebelle.simplebackpacks.SimpleBackpacks;
+import net.shonx.simplebackpacks.SimpleBackpacks;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.ItemModelProvider;

@@ -22,13 +22,13 @@
  * SOFTWARE.
  */
 
-package org.sweetiebelle.simplebackpacks.common.container;
+package net.shonx.simplebackpacks.common.container;
 
 import java.util.ArrayList;
 
-import org.sweetiebelle.simplebackpacks.common.BackpackType;
-import org.sweetiebelle.simplebackpacks.common.inventory.InventoryProvider;
-import org.sweetiebelle.simplebackpacks.common.sounds.BackpackSounds;
+import net.shonx.simplebackpacks.common.BackpackType;
+import net.shonx.simplebackpacks.common.inventory.InventoryProvider;
+import net.shonx.simplebackpacks.common.sounds.BackpackSounds;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;

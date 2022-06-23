@@ -22,12 +22,12 @@
  * SOFTWARE.
  */
 
-package org.sweetiebelle.simplebackpacks.data;
+package net.shonx.simplebackpacks.data;
 
 import java.util.function.Consumer;
 
-import org.sweetiebelle.simplebackpacks.SimpleBackpacks;
-import org.sweetiebelle.simplebackpacks.common.item.BackpackItems;
+import net.shonx.simplebackpacks.SimpleBackpacks;
+import net.shonx.simplebackpacks.common.item.BackpackItems;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;

@@ -22,11 +22,11 @@
  * SOFTWARE.
  */
 
-package org.sweetiebelle.simplebackpacks.client;
+package net.shonx.simplebackpacks.client;
 
-import org.sweetiebelle.simplebackpacks.SimpleBackpacks;
-import org.sweetiebelle.simplebackpacks.common.container.BackpackContainer;
-import org.sweetiebelle.simplebackpacks.common.container.BackpackContainerTypes;
+import net.shonx.simplebackpacks.SimpleBackpacks;
+import net.shonx.simplebackpacks.common.container.BackpackContainer;
+import net.shonx.simplebackpacks.common.container.BackpackContainerTypes;
 
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.gui.ScreenManager.IScreenFactory;

@@ -22,33 +22,28 @@
  * SOFTWARE.
  */
 
-package org.sweetiebelle.simplebackpacks.common.container;
+package net.shonx.simplebackpacks.data;
 
-import org.sweetiebelle.simplebackpacks.common.item.ItemBackpack;
+import net.shonx.simplebackpacks.SimpleBackpacks;
+import net.shonx.simplebackpacks.common.item.BackpackItems;
 
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.container.Slot;
-import net.minecraft.item.ItemStack;
+import net.minecraft.data.DataGenerator;
 
-public class BackpackSlot extends Slot {
+import net.minecraftforge.common.data.LanguageProvider;
 
-    public BackpackSlot(IInventory inventoryIn, int index, int xPosition, int yPosition) {
-        super(inventoryIn, index, xPosition, yPosition);
+public class LanguageGenerator extends LanguageProvider {
+
+    public LanguageGenerator(DataGenerator gen) {
+        super(gen, SimpleBackpacks.MODID, "en_us");
     }
 
     @Override
-    public boolean mayPickup(final PlayerEntity player) {
-        if (getItem().getItem() instanceof ItemBackpack)
-            return false;
-        return super.mayPickup(player);
-    }
-    
-    @Override
-    public boolean mayPlace(ItemStack stack) {
-        if(stack.getItem() instanceof ItemBackpack)
-            return false;
-        return super.mayPlace(stack);
+    protected void addTranslations() {
+        add(BackpackItems.LEATHER_BACKPACK.get(), "Leather Backpack");
+        add(BackpackItems.IRON_BACKPACK.get(), "Iron Backpack");
+        add(BackpackItems.GOLD_BACKPACK.get(), "Gold Backpack");
+        add(BackpackItems.DIAMOND_BACKPACK.get(), "Diamond Backpack");
+        add(BackpackItems.NETHERITE_BACKPACK.get(), "Netherite Backpack");
     }
 
 }

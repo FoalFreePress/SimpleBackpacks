@@ -22,10 +22,10 @@
  * SOFTWARE.
  */
 
-package org.sweetiebelle.simplebackpacks.client;
+package net.shonx.simplebackpacks.client;
 
-import org.sweetiebelle.simplebackpacks.common.BackpackType;
-import org.sweetiebelle.simplebackpacks.common.container.BackpackContainer;
+import net.shonx.simplebackpacks.common.BackpackType;
+import net.shonx.simplebackpacks.common.container.BackpackContainer;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;

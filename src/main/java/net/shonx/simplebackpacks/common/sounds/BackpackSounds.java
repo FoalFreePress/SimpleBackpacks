@@ -22,28 +22,22 @@
  * SOFTWARE.
  */
 
-package org.sweetiebelle.simplebackpacks.data;
+package net.shonx.simplebackpacks.common.sounds;
 
-import org.sweetiebelle.simplebackpacks.SimpleBackpacks;
-import org.sweetiebelle.simplebackpacks.common.item.BackpackItems;
+import net.minecraftforge.registries.ForgeRegistries;
 
-import net.minecraft.data.DataGenerator;
+import net.shonx.simplebackpacks.SimpleBackpacks;
 
-import net.minecraftforge.common.data.LanguageProvider;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.DeferredRegister;
 
-public class LanguageGenerator extends LanguageProvider {
+public class BackpackSounds {
+    public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, SimpleBackpacks.MODID);
 
-    public LanguageGenerator(DataGenerator gen) {
-        super(gen, SimpleBackpacks.MODID, "en_us");
-    }
+    public static final RegistryObject<SoundEvent> OPEN_SOUND = SOUNDS.register("open_backpack", () -> new SoundEvent(SimpleBackpacks.of("open_backpack")));
 
-    @Override
-    protected void addTranslations() {
-        add(BackpackItems.LEATHER_BACKPACK.get(), "Leather Backpack");
-        add(BackpackItems.IRON_BACKPACK.get(), "Iron Backpack");
-        add(BackpackItems.GOLD_BACKPACK.get(), "Gold Backpack");
-        add(BackpackItems.DIAMOND_BACKPACK.get(), "Diamond Backpack");
-        add(BackpackItems.NETHERITE_BACKPACK.get(), "Netherite Backpack");
-    }
+    public static final RegistryObject<SoundEvent> CLOSE_SOUND = SOUNDS.register("close_backpack", () -> new SoundEvent(SimpleBackpacks.of("close_backpack")));
 
 }

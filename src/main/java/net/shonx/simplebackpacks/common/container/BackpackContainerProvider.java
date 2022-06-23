@@ -22,11 +22,11 @@
  * SOFTWARE.
  */
 
-package org.sweetiebelle.simplebackpacks.common.container;
+package net.shonx.simplebackpacks.common.container;
 
-import org.sweetiebelle.simplebackpacks.common.BackpackType;
-import org.sweetiebelle.simplebackpacks.common.inventory.InventoryProvider;
-import org.sweetiebelle.simplebackpacks.common.item.ItemBackpack;
+import net.shonx.simplebackpacks.common.BackpackType;
+import net.shonx.simplebackpacks.common.inventory.InventoryProvider;
+import net.shonx.simplebackpacks.common.item.ItemBackpack;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
