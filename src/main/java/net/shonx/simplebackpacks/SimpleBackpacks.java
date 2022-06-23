@@ -28,6 +28,7 @@ import java.util.Objects;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import net.shonx.simplebackpacks.common.container.BackpackContainerTypes;
 import net.shonx.simplebackpacks.common.item.BackpackItems;
 import net.shonx.simplebackpacks.common.sounds.BackpackSounds;
@@ -37,8 +38,8 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(SimpleBackpacks.MODID)
 @EventBusSubscriber(modid = SimpleBackpacks.MODID, bus = Bus.MOD)
@@ -53,8 +54,7 @@ public class SimpleBackpacks {
         BackpackContainerTypes.CONTAINERS.register(modBus);
         BackpackSounds.SOUNDS.register(modBus);
     }
-    
-    
+
     public static ResourceLocation of(String name) {
         return new ResourceLocation(MODID, Objects.requireNonNull(name));
     }

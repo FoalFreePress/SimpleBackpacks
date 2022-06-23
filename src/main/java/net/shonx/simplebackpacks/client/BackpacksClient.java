@@ -30,18 +30,20 @@ import net.shonx.simplebackpacks.common.container.BackpackContainerTypes;
 
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.gui.ScreenManager.IScreenFactory;
+
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 @EventBusSubscriber(value = Dist.CLIENT, modid = SimpleBackpacks.MODID, bus = Bus.MOD)
 public class BackpacksClient {
 
     @SubscribeEvent
     public static void setupClient(FMLClientSetupEvent event) {
-        // My gradle complains if we don't explicitly cast the IScreenFactory<BackpackContainer, BackpackScreen>.
+        // My gradle complains if we don't explicitly cast the
+        // IScreenFactory<BackpackContainer, BackpackScreen>.
         ScreenManager.register(BackpackContainerTypes.LEATHER_BACKPACK.get(), (IScreenFactory<BackpackContainer, BackpackScreen>) (container, inventory, title) -> new BackpackScreen(container, inventory, title, 8.0F));
         ScreenManager.register(BackpackContainerTypes.IRON_BACKPACK.get(), (IScreenFactory<BackpackContainer, BackpackScreen>) (container, inventory, title) -> new BackpackScreen(container, inventory, title, 8.0F));
         ScreenManager.register(BackpackContainerTypes.GOLD_BACKPACK.get(), (IScreenFactory<BackpackContainer, BackpackScreen>) (container, inventory, title) -> new BackpackScreen(container, inventory, title, 8.0F));

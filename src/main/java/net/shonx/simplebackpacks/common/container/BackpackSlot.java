@@ -43,10 +43,10 @@ public class BackpackSlot extends Slot {
             return false;
         return super.mayPickup(player);
     }
-    
+
     @Override
     public boolean mayPlace(ItemStack stack) {
-        if(stack.getItem() instanceof ItemBackpack)
+        if (stack.getItem() instanceof ItemBackpack)
             return false;
         return super.mayPlace(stack);
     }

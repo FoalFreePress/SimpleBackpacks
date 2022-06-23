@@ -36,6 +36,7 @@ import net.minecraft.data.ShapedRecipeBuilder;
 import net.minecraft.data.SmithingRecipeBuilder;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.tags.ItemTags;
+
 import net.minecraftforge.common.Tags;
 
 public class RecipeGenerator extends RecipeProvider {
@@ -96,6 +97,5 @@ public class RecipeGenerator extends RecipeProvider {
         .save(consumer, SimpleBackpacks.of("netherite_backpack"));
         // @formatter:on
     }
-
 
 }

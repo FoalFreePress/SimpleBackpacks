@@ -29,6 +29,7 @@ import java.util.Locale;
 import javax.annotation.Nullable;
 
 import net.shonx.simplebackpacks.SimpleBackpacks;
+
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.ResourceLocation;
@@ -68,7 +69,7 @@ public enum BackpackType implements IStringSerializable {
     public String getId() {
         return name().toLowerCase(Locale.ROOT);
     }
-    
+
     @Override
     public String getSerializedName() {
         return I18n.get("item.simplebackpacks.%s", name());

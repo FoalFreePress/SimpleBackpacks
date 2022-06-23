@@ -46,7 +46,7 @@ public class BackpackContainer extends Container {
     private InventoryProvider provider;
 
     public static BackpackContainer createLeatherContainer(int windowId, PlayerInventory playerInventory) {
-        return createLeatherContainer( windowId, playerInventory, InventoryProvider.createEmptyInventoryProvider(BackpackType.LEATHER));
+        return createLeatherContainer(windowId, playerInventory, InventoryProvider.createEmptyInventoryProvider(BackpackType.LEATHER));
     }
 
     public static BackpackContainer createLeatherContainer(int windowId, PlayerInventory playerInventory, InventoryProvider provider) {
@@ -88,14 +88,14 @@ public class BackpackContainer extends Container {
     public BackpackContainer(ContainerType<? extends BackpackContainer> containerType, int windowId, PlayerInventory playerInventory, InventoryProvider provider, BackpackType backpackType) {
         super(containerType, windowId);
         this.provider = provider;
-        this.inventory = provider.getInventory();
+        inventory = provider.getInventory();
         checkContainerSize(inventory, backpackType.size);
 
         this.backpackType = backpackType;
 
         inventory.startOpen(playerInventory.player);
 
-        getSlots(provider.getInventory(), playerInventory, backpackType, getOffset(backpackType)).forEach((slot) -> addSlot(slot));
+        getSlots(provider.getInventory(), playerInventory, backpackType, getOffset(backpackType)).forEach(this::addSlot);
     }
 
     private int getOffset(BackpackType type) {
@@ -127,9 +127,8 @@ public class BackpackContainer extends Container {
             for (int playerInvCol = 0; playerInvCol < 9; playerInvCol++)
                 slots.add(new BackpackSlot(playerInventory, playerInvCol + playerInvRow * 9 + 9, leftCol + playerInvCol * 18, type.ySize - (4 - playerInvRow) * 18 - 9));
 
-        for (int hotbarSlot = 0; hotbarSlot < 9; hotbarSlot++) {
+        for (int hotbarSlot = 0; hotbarSlot < 9; hotbarSlot++)
             slots.add(new BackpackSlot(playerInventory, hotbarSlot, leftCol + hotbarSlot * 18, type.ySize - 23));
-        }
         return slots;
     }
 

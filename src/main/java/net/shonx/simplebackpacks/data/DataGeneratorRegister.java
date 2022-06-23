@@ -41,18 +41,14 @@ public class DataGeneratorRegister {
     public static void onGatherdata(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
-        if (event.includeServer()) {
+        if (event.includeServer())
             genServer(generator, existingFileHelper);
-        }
-        if (event.includeClient()) {
-            genClient(generator,existingFileHelper);
-        }
-        if (event.includeDev()) {
+        if (event.includeClient())
+            genClient(generator, existingFileHelper);
+        if (event.includeDev())
             genDev(generator, existingFileHelper);
-        }
-        if (event.includeReports()) {
+        if (event.includeReports())
             genReports(generator, existingFileHelper);
-        }
     }
 
     private static void genServer(DataGenerator generator, ExistingFileHelper existingFileHelper) {

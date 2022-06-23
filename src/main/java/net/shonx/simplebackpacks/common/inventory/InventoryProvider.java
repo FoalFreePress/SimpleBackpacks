@@ -26,16 +26,18 @@ package net.shonx.simplebackpacks.common.inventory;
 
 import javax.annotation.Nonnull;
 
+import com.google.common.base.Preconditions;
+
 import net.shonx.simplebackpacks.common.BackpackType;
 import net.shonx.simplebackpacks.common.item.BackpackItems;
 import net.shonx.simplebackpacks.common.item.ItemBackpack;
-import com.google.common.base.Preconditions;
 
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.ListNBT;
+
 import net.minecraftforge.common.util.INBTSerializable;
 
 public class InventoryProvider implements INBTSerializable<ListNBT> {
@@ -83,9 +85,8 @@ public class InventoryProvider implements INBTSerializable<ListNBT> {
     public void deserializeNBT(ListNBT nbt) {
         if (nbt == null)
             return;
-        for (int i = 0; i < nbt.size(); i++) {
+        for (int i = 0; i < nbt.size(); i++)
             inventory.setItem(i, ItemStack.of(nbt.getCompound(i)));
-        }
     }
 
     public static InventoryProvider getProviderFromStack(ItemStack stack) {

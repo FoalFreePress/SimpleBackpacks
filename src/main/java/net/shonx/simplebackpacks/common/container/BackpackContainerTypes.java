@@ -27,6 +27,7 @@ package net.shonx.simplebackpacks.common.container;
 import net.shonx.simplebackpacks.SimpleBackpacks;
 
 import net.minecraft.inventory.container.ContainerType;
+
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -42,7 +43,7 @@ public class BackpackContainerTypes {
     public static final RegistryObject<ContainerType<BackpackContainer>> GOLD_BACKPACK = CONTAINERS.register("gold_backpack", () -> new ContainerType<BackpackContainer>(BackpackContainer::createGoldContainer));
 
     public static final RegistryObject<ContainerType<BackpackContainer>> DIAMOND_BACKPACK = CONTAINERS.register("diamond_backpack", () -> new ContainerType<BackpackContainer>(BackpackContainer::createDiamondContainer));
-    
+
     public static final RegistryObject<ContainerType<BackpackContainer>> NETHERITE_BACKPACK = CONTAINERS.register("netherite_backpack", () -> new ContainerType<BackpackContainer>(BackpackContainer::createNetheriteContainer));
 
 }

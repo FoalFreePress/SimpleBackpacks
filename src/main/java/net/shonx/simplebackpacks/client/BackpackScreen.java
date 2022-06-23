@@ -24,11 +24,11 @@
 
 package net.shonx.simplebackpacks.client;
 
-import net.shonx.simplebackpacks.common.BackpackType;
-import net.shonx.simplebackpacks.common.container.BackpackContainer;
-
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
+
+import net.shonx.simplebackpacks.common.BackpackType;
+import net.shonx.simplebackpacks.common.container.BackpackContainer;
 
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
@@ -44,13 +44,13 @@ public class BackpackScreen extends ContainerScreen<BackpackContainer> {
     public BackpackScreen(BackpackContainer container, PlayerInventory playerInventory, ITextComponent title, float offset) {
         super(container, playerInventory, title);
 
-        this.backpackType = container.getChestType();
-        this.imageWidth = backpackType.xSize;
-        this.imageHeight = backpackType.ySize;
-        this.textureXSize = backpackType.textureXSize;
-        this.textureYSize = backpackType.textureYSize;
+        backpackType = container.getChestType();
+        imageWidth = backpackType.xSize;
+        imageHeight = backpackType.ySize;
+        textureXSize = backpackType.textureXSize;
+        textureYSize = backpackType.textureYSize;
 
-        this.passEvents = false;
+        passEvents = false;
         this.offset = offset;
     }
 
@@ -64,20 +64,20 @@ public class BackpackScreen extends ContainerScreen<BackpackContainer> {
 
     @Override
     protected void renderLabels(MatrixStack matrixStack, int mouseX, int mouseY) {
-        this.font.draw(matrixStack, this.title.getString(), 8.0F, 6.0F, 4210752);
-        this.font.draw(matrixStack, this.inventory.getDisplayName().getString(), offset, this.imageHeight - 96 + 2, 4210752);
+        font.draw(matrixStack, title.getString(), 8.0F, 6.0F, 4210752);
+        font.draw(matrixStack, inventory.getDisplayName().getString(), offset, imageHeight - 96 + 2, 4210752);
     }
 
     @Override
     protected void renderBg(MatrixStack matrixStack, float partialTicks, int mouseX, int mouseY) {
         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 
-        this.minecraft.getTextureManager().bind(this.backpackType.guiTexture);
+        minecraft.getTextureManager().bind(backpackType.guiTexture);
 
-        int x = (this.width - this.imageWidth) / 2;
-        int y = (this.height - this.imageHeight) / 2;
+        int x = (width - imageWidth) / 2;
+        int y = (height - imageHeight) / 2;
 
-        blit(matrixStack, x, y, 0, 0, this.imageWidth, this.imageHeight, this.textureXSize, this.textureYSize);
+        blit(matrixStack, x, y, 0, 0, imageWidth, imageHeight, textureXSize, textureYSize);
     }
 
 }
